@@ -1,0 +1,25 @@
+﻿@page
+@model CrudRazorPages_EF.DeleteModel
+
+@{ ViewData["Title"] = "Delete"; }
+
+<h1>Remover</h1>
+<h3>Você tem certeza que deseja remover esse registro?</h3>
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.Funcionario.Nome)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Funcionario.Nome)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Funcionario.Email)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Funcionario.Email)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Funcionario.Idade)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Funcionario.Idade)</dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Funcionario.Id" />
+        <input type="submit" value="Remover" class="btn btn-danger" /> |
+        <a asp-page="./Index">Voltar para a lista</a>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+﻿@page
+@model CrudRazorPages_EF.IndexModel
+
+@{ ViewData["Title"] = "Início"; }
+
+<h1>Início</h1>
+<p><a asp-page="Create">Adicionar novo funcionário</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Funcionario[0].Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Funcionario[0].Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Funcionario[0].Idade)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Funcionario) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Idade)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

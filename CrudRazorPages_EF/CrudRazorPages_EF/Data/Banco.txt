@@ -1,0 +1,10 @@
+﻿create database Empresa
+
+create table funcionario(
+	Id int not null primary key identity(1,1),
+	Nome nvarchar(150),
+	Email nvarchar(150),
+	Idade int 
+)
+
+select top 100 * from funcionario

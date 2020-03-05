@@ -1,0 +1,38 @@
+﻿@page
+@model CrudRazorPages_EF.EditModel
+
+@{ ViewData["Title"] = "Editar"; }
+
+<h1>Editar</h1>
+<h4>Funcionario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Funcionario.Id" />
+            <div class="form-group">
+                <label asp-for="Funcionario.Nome" class="control-label"></label>
+                <input asp-for="Funcionario.Nome" class="form-control" />
+                <span asp-validation-for="Funcionario.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.Email" class="control-label"></label>
+                <input asp-for="Funcionario.Email" class="form-control" />
+                <span asp-validation-for="Funcionario.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.Idade" class="control-label"></label>
+                <input asp-for="Funcionario.Idade" class="form-control" />
+                <span asp-validation-for="Funcionario.Idade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div><a asp-page="./Index">Voltar para a lista</a></div>
+
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }
